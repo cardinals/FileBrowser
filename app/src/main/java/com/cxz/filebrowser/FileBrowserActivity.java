@@ -94,12 +94,11 @@ public class FileBrowserActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(path)) {
             return name;
         }
-        int i = path.lastIndexOf('.');
-        int j = path.lastIndexOf('/');
-        if (i == -1 || j == -1) {
+        int i = path.lastIndexOf('/');
+        if (i == -1) {
             return name;
         }
-        name = path.substring(j + 1, i);
+        name = path.substring(i + 1);
         return name;
     }
 
